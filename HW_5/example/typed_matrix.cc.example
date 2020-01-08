@@ -1,0 +1,22 @@
+#include "typed_matrix.h"
+
+/*
+ * Kind of interesting is that these two static functions are 'fully specified' by
+ * the double type, so we actually need to provide an empty template <> for these to
+ * work. Further, since they are fully specified, we actually need to define them
+ * in this .cc file; we actually cannot define them in the type_matrix.h file.
+ *
+ * Weird right?
+ *
+ * These methods can be accessed via TypedMatrix<double>::read_matrix_csv
+*/
+
+template <>
+TypedMatrix<double> TypedMatrix<double>::read_matrix_csv(const string path) {
+    // read_matrix_csv
+}
+
+template <>
+void TypedMatrix<double>::write_matrix_csv(const TypedMatrix<double> &matrix, const string path) {
+    // write_matrix_csv
+}
